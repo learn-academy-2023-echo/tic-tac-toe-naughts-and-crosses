@@ -24,3 +24,9 @@ body {
 h1{
   color: #E3DAC9;
 }
+
+.status {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
