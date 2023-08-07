@@ -1,5 +1,26 @@
+body {
+  font-family: 'Chelsea Market', cursive;
+  text-align: center;
+  background-image: url("https://cdn.pixabay.com/photo/2023/03/19/23/27/pattern-7863491_1280.jpg");
+  font-size: 40px;
+}
+
 .square {
-  border: 2px solid black;
-  height: 100px;
-  width: 100px;
+  border: 1px solid #E3DAC9;
+  height: 200px;
+  width: 200px;
+  -webkit-box-shadow:0px 0px 12px 15px rgba(222,255,245,0.14);
+  -moz-box-shadow: 0px 0px 12px 15px rgba(222,255,245,0.14);
+  box-shadow: 0px 0px 12px 15px rgba(222,255,245,0.14);
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 682px;
+  margin: 0 auto;
+}
+
+h1{
+  color: #E3DAC9;
 }
