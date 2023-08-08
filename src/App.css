@@ -2,7 +2,7 @@ body {
   font-family: 'Chelsea Market', cursive;
   text-align: center;
   background-image: url("https://cdn.pixabay.com/photo/2023/03/19/23/27/pattern-7863491_1280.jpg");
-  font-size: 40px;
+  color: black;
 }
 
 .square {
@@ -23,10 +23,80 @@ body {
 
 h1{
   color: #E3DAC9;
+  font-size: 65px;
 }
 
 .status {
-  font-size: 24px;
+  font-size: 40px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
+
+.img1 {
+  height: 200px;
+  width: 200px;  
+}
+
+.img2 {
+  height: 200px;
+  width: 200px;
+}
+
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 12px;
+    font-family: 'Chelsea Market', cursive;
+}
+
+button{
+    position: relative;
+    width: 120px;
+    height: 60px;
+    margin: 10px 0;
+    font-size: 18px;
+    color: #000;
+    background-color: #E3DAC9;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+
+button:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: url(https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/7822153/brush-strokes-set-clipart-md.png);
+    
+    background-size: cover;
+    transform-orgin: left;
+    transition: 0.8s;
+}
+
+button:hover:before{
+    width: 100%;
+    color: #fff;
+}
+
+
+button:hover{
+    color: #000;
+}
+
+button span{
+    position: relative;
+    z-index: 1;
+}
+

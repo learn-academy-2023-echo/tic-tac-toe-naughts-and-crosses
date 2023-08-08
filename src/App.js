@@ -4,22 +4,25 @@ import './App.css'
 
 const App = () => {
   const [squares, setSquares] = useState(Array(9).fill(null))
-
-const [xNext, setxNext] = useState(true)
+  const [xNext, setxNext] = useState(true)
+  const [playerSelect, setPlayerSelect] = useState("x")
 
 const handleClick = (index) => {
   const squareUpdate = [...squares]
-  if (theWinner(squareUpdate) || squareUpdate[index]) {
+  if (squareUpdate[index]) {
     return }
     squareUpdate[index] = xNext ? "X" : "O" // conditional opertator for if-else: is xNext is true the expression equals X and if false equals 0
     setSquares(squareUpdate)
     setxNext(!xNext)
   
-    const winner = theWinner(squares)
+    
+    const winner = theWinner(squareUpdate)
       if (winner) {
         alert(`winner: ${winner}`)
       } else if (squareUpdate.every((square) => square !== null))
-      alert("Draw!! Please restart the game.")
+      alert("Draw!! Please restart the game.") 
+      
+      
       }
 
 
@@ -42,9 +45,6 @@ const handleClick = (index) => {
     }
           return null
 }
-
-
- 
 
  let status 
  let winner = theWinner(squares)
