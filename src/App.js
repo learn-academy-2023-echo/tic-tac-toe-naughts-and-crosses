@@ -5,13 +5,16 @@ import './App.css'
 const App = () => {
   const [squares, setSquares] = useState(Array(9).fill(null))
   const [xNext, setxNext] = useState(true)
-  const [playerSelect, setPlayerSelect] = useState("x")
+  const [playerSelect, setPlayerSelect] = useState({X: null, O: null})
 
 const handleClick = (index) => {
   const squareUpdate = [...squares]
-  if (squareUpdate[index]) {
-    return }
-    squareUpdate[index] = xNext ? "X" : "O" // conditional opertator for if-else: is xNext is true the expression equals X and if false equals 0
+  if (squareUpdate[index] || !playerSelect.X || !playerSelect.O) {
+    return 
+  }
+
+    const currentPlayerSelect = xNext ? playerSelect.X : playerSelect.O
+    squareUpdate[index] = currentPlayerSelect// conditional opertator for if-else: is xNext is true the expression equals X and if false equals 0
     setSquares(squareUpdate)
     setxNext(!xNext)
   
@@ -61,6 +64,22 @@ const handleClick = (index) => {
     <>
       <body>
         <h1>Tic Tac Toe</h1>
+        <div clasName="playerChar">
+          <label>
+            Player X Select:
+            <select value={playerSelect.X} onClick={(e) => setPlayerSelect({...playerSelect, X: e.target.value})}>
+            <option value="X">X</option>
+            {/* <option value="❌">❌</option> dsfsfs*/}
+            </select>
+          </label>
+          <br></br>
+          <label>
+            Player O Select:
+            <select value={playerSelect.O} onClick={(e) => setPlayerSelect({...playerSelect, O: e.target.value})}>
+            <option value="O">O</option>
+            </select>
+          </label>
+        </div>
         <div className="box">
           {squares.map((value, index) => (
             <Square key={index} value={value} onClick={() => handleClick(index)} />
