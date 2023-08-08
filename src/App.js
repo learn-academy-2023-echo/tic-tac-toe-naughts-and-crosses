@@ -14,8 +14,15 @@ const handleClick = (index) => {
     squareUpdate[index] = xNext ? "X" : "O" // conditional opertator for if-else: is xNext is true the expression equals X and if false equals 0
     setSquares(squareUpdate)
     setxNext(!xNext)
-  }
   
+    const winner = theWinner(squares)
+      if (winner) {
+        alert(`winner: ${winner}`)
+      } else if (squareUpdate.every((square) => square !== null))
+      alert("Draw!! Please restart the game.")
+      }
+
+
     const theWinner = (squares) => {
       let winningThree = [
         [0, 1, 2],
@@ -37,13 +44,19 @@ const handleClick = (index) => {
 }
 
 
- const winner = theWinner(squares)
+ 
 
  let status 
+ let winner = theWinner(squares)
  if (winner) {
-  alert(`Winner: ${winner}`)
- } 
- const refresh = () => window.location.reload(true)
+  status = `winner: ${winner}`
+  alert(`winner: ${winner}`)
+ } else {
+  status = `Next player: ${xNext ? "X" : "O"}`
+ }
+ const refresh = () => {
+  window.location.reload(true)
+ }
   return (
     <>
       <body>
@@ -59,6 +72,7 @@ const handleClick = (index) => {
     </>
   )
 }
+
 
 
 
